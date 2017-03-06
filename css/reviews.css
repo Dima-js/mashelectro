@@ -1,0 +1,132 @@
+.baner_costumers{
+    background: url("../img/bg_reviews.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+.bg_rev_block{
+    background: url("../img/bg_review.jpg") no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.reviews_main{
+    padding: 20px;
+    border: 1px solid #bce8ad;
+    background-color: #ffffff;
+    position: relative;
+    margin-bottom: 40px;
+    margin-top: 20px;
+
+}
+.reviews_main img{
+float: left;
+    position: absolute;
+    width:250px;
+}
+.inner_wrapper{
+    min-height: 170px;
+    box-sizing: border-box;
+    padding-left: 270px;
+    position: relative;
+}
+
+.inner_wrapper h6{
+    color: #07705b;
+    font-family: Rubik-Regular;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+.inner_wrapper p{
+    color: #0e0e0e;
+    font-family: Rubik-Light;
+    font-size: 14px;
+    font-weight: 300;
+   margin-top: 0;
+    margin-bottom: 25px;
+    display: inline-block;
+
+}
+.inner_wrapper a{
+    color: #07705b;
+    font-family: Rubik-Light;
+    font-size: 12px;
+    font-weight: 300;
+    text-decoration: underline;
+}
+.inner_wrapper:after{
+    background: url("../img/right-quote.png") no-repeat;
+    height: 19px;
+    width: 25px;
+    position: absolute;
+    top:0;
+    right: 0;
+}
+.wrap_hidden{
+    display: none;
+}
+.pagination{
+    margin-top: 20px;
+    padding-bottom: 60px;
+}
+.pagination ul{
+    list-style-type: none;
+    margin: 0 auto;
+    padding-left: 0;
+    text-align: center;
+}
+.pagination ul li{
+    display: inline-block;
+}
+.pagination ul li a{
+    font-family: Rubik-Regular;
+    font-size: 14px;
+    color: #0e0e0e;
+    font-weight: 300;
+    text-decoration: none;
+    padding-left: 2.5px;
+    padding-right: 2.5px;
+}
+.pagination ul li a:hover{
+    font-family: Rubik-Regular;
+    font-size: 14px;
+    color: #3db318;
+    font-weight: 300;
+    text-decoration: none;
+}
+.pagination ul li  .active{
+    color: #3db318;
+}
+@media (max-width: 570px) {
+    .reviews_main img {
+         float: none;
+         position: inherit;
+        width: 250px;
+        display: block;
+        margin: 0 auto;
+    }
+    .inner_wrapper {
+     margin-top: 30px;
+         padding-left: 0px;
+    }
+    .wrap_text_baner_costumers h3 {
+        font-size: 45px;
+        line-height: 40px;
+    }
+    .wrap_text_baner_costumers p {
+        font-size: 25px;
+    }
+    }
+@media (max-width: 325px) {
+    .inner_wrapper h6 {
+        font-size: 16px;
+    }
+    .inner_wrapper p {
+        font-size: 13px;
+    }
+    .reviews_main {
+        padding: 10px;
+    }
+}
+

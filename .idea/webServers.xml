@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="05b4e184-6649-44f5-a113-c4071b11f36d" name="mashelectro" url="http://elektro.nwdev.net">
+        <fileTransfer host="elektro.nwdev.net" port="21" password="dfefdfe7dfeedff0dfd9dfdddfd0dfdedfdddff3dfc5df89df9e" username="c9_elektro">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

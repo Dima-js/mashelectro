@@ -1,0 +1,63 @@
+.baner_costumers{
+    background: url("../img/banner_contacts.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+.way {
+    padding-top: 35px!important;
+    padding-bottom: 20px!important;
+    margin-top: 0!important;
+    margin-bottom: 0!important;
+}
+.bg_rev_block{
+    background: url("../img/bg_contacts.jpg");
+    background-size: cover;
+}
+.contacts_data{
+    margin-bottom: 58px;
+}
+.contacts_data p{
+    padding-top: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Rubik-Light;
+    font-size: 14px;
+    font-weight: 300;
+    /* Text style for "Чтобы связ" */
+    color: #0e0e0e;
+    /* Text style for "" */
+
+}
+.contacts_data p:last-child{
+    padding-bottom: 40px;
+}
+.contacts_data p a{
+    color: #4ca42f;
+}
+.map{
+    height: 378px;
+}
+.bg_this_block{
+    border-radius: 2px;
+    background-color: #f9f9f9;
+    background-image: linear-gradient(180deg, #ffffff 0%, #ffffff 1%, #fcfcfc 27%, #f7f7f7 100%);
+    opacity: 0.6;
+}
+@media (max-width: 500px) {
+    .wrap_text_baner_costumers h3 {
+        font-size: 45px;
+        line-height: 45px;
+    }
+    .wrap_text_baner_costumers p {
+        position: relative;
+        color: #fcfcfc;
+        font-family: Rubik-Regular;
+        font-size: 25px;
+
+    }
+}
+@media (max-width: 480px) {
+    .contacts_data p {
+        font-size: 13px;
+    }
+    }

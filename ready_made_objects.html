@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ready made object</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ready_made_objects.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/electro_equipment.css">
+    <script src="js/script.js"></script>
+    <!--<script src="slick/jquery-3.1.1.min.js"></script>-->
+    <script src="slick/slick.js"></script>
+    <script src="js/btn.js"></script>
+
+    <script>
+        $(document).on('click', '.multi-accordion li > a', function (event) {
+            var $this = $(this), $next = $this.next();
+            if ($next.length) {
+                if ($next.is(':visible')) {
+                    $next.slideToggle(function () {
+                        $next.find('ul').toggle(false);
+                    });
+                } else {
+                    $next.slideToggle().parent().siblings().find('ul').filter(':visible').slideToggle();
+                }
+
+                event.preventDefault();
+            }
+        });
+    </script>
+</head>
+<body>
+<div class="wrap_main_page">
+    <header>
+        <div class="wrapper clearfix">
+            <a href="index.html" class="logo"><img src="img/logo.png"></a>
+            <div class="wrap_inputs">
+                <a href="#" id="go" class="order_call"><span>Заказать звонок</span></a>
+                <a href="#" id="go2" class="feedback"><span>Обратная связь</span></a>
+                <div class="search">
+                    <form class="form" >
+                        <input type="text" placeholder="Искать здесь..." class="input">
+                        <button type="submit" class="button"></button>
+                    </form>
+                </div>
+            </div>
+            <div class="time_work">
+                <span class="phon">+7 (495) 150-77-85</span>
+                <span class="work">пн-пт c 9-00 с 18-00</span>
+
+            </div>
+
+        </div>
+
+    </header>
+    <div id="modal_form">
+        <!-- Сaмo oкнo -->
+        <span id="modal_close"><img src="img/close_modal_form.png"></span>
+        <div class="wrap_advf">
+
+            <div class="content">
+                <h3>Есть вопросы?</h3>
+                <span>Закажите звонок</span>
+                <form action="#">
+                    <input type="text" name="name" placeholder="Ваше имя" class="input_call">
+                    <input type="text" name="phone" placeholder="Укажите Ваш телефон" class="input_call">
+                    <input type="submit" class="btn_phon" value="Отправить" >
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <!-- Пoдлoжкa -->
+
+    <script>$(document).ready(function() { // вся мaгия пoсле зaгрузки стрaницы
+        $('a#go').click( function(event){ // лoвим клик пo ссылки с id="go"
+            event.preventDefault(); // выключaем стaндaртную рoль элементa
+            $('#overlay').fadeIn(400, // снaчaлa плaвнo пoкaзывaем темную пoдлoжку
+                    function(){ // пoсле выпoлнения предъидущей aнимaции
+                        $('#modal_form')
+                                .css('display', 'block') // убирaем у мoдaльнoгo oкнa display: none;
+                                .animate({opacity: 1, top: '50%'}, 200); // плaвнo прибaвляем прoзрaчнoсть oднoвременнo сo съезжaнием вниз
+                    });
+        });
+        /* Зaкрытие мoдaльнoгo oкнa, тут делaем тo же сaмoе нo в oбрaтнoм пoрядке */
+        $('#modal_close, #overlay').click( function(){ // лoвим клик пo крестику или пoдлoжке
+            $('#modal_form')
+                    .animate({opacity: 0, top: '45%'}, 200,  // плaвнo меняем прoзрaчнoсть нa 0 и oднoвременнo двигaем oкнo вверх
+                            function(){ // пoсле aнимaции
+                                $(this).css('display', 'none'); // делaем ему display: none;
+                                $('#overlay').fadeOut(400); // скрывaем пoдлoжку
+                            }
+                    );
+        });
+    });
+    </script>
+
+
+
+
+
+    <div id="modal_form2">
+        <!-- Сaмo oкнo -->
+        <span id="modal_close2"><img src="img/close_modal_form.png"></span>
+        <div class="wrap_advf">
+
+            <div class="content">
+                <h3>Напишите нам и </h3>
+                <span>мы ответим на все вопросы</span>
+                <form action="#">
+                    <div class="wrap_input_modal clearfix">
+                        <input type="text" name="name" placeholder="Ваше имя" class="coment">
+                        <input type="text" name="phone" placeholder="Укажите Ваш телефон" class="coment">
+                    </div>
+                    <textarea type="text" name="comment" placeholder="Ваш коментарий"></textarea>
+                    <input type="submit" class="btn_phon" value="Отправить" >
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>$(document).ready(function() { // вся мaгия пoсле зaгрузки стрaницы
+        $('a#go2').click( function(event){ // лoвим клик пo ссылки с id="go"
+            event.preventDefault(); // выключaем стaндaртную рoль элементa
+            $('#overlay').fadeIn(400, // снaчaлa плaвнo пoкaзывaем темную пoдлoжку
+                    function(){ // пoсле выпoлнения предъидущей aнимaции
+                        $('#modal_form2')
+                                .css('display', 'block') // убирaем у мoдaльнoгo oкнa display: none;
+                                .animate({opacity: 1, top: '50%'}, 200); // плaвнo прибaвляем прoзрaчнoсть oднoвременнo сo съезжaнием вниз
+                    });
+        });
+        /* Зaкрытие мoдaльнoгo oкнa, тут делaем тo же сaмoе нo в oбрaтнoм пoрядке */
+        $('#modal_close2, #overlay').click( function(){ // лoвим клик пo крестику или пoдлoжке
+            $('#modal_form2')
+                    .animate({opacity: 0, top: '45%'}, 200,  // плaвнo меняем прoзрaчнoсть нa 0 и oднoвременнo двигaем oкнo вверх
+                            function(){ // пoсле aнимaции
+                                $(this).css('display', 'none'); // делaем ему display: none;
+                                $('#overlay').fadeOut(400); // скрывaем пoдлoжку
+                            }
+                    );
+        });
+    });
+    </script>
+    <nav>
+        <div class="wrapper">
+
+            <a href="#" id="menu-btn-toggle" class=""><span></span></a>
+            <div id="overlay"> </div>
+            <div id="myPanelDefault" >
+                <ul class="style_menu" style="display: block" >
+                    <li>
+                        <a href="#" >О компании</a>
+                    </li>
+                    <li>
+                        <a href="#" class="none">Решения и услуги </a>
+                    </li>
+                    <ul class="multi-accordion non">
+                        <li>
+                            <a href="#">Решения и услуги </a>
+                            <ul>
+                                <li>
+                                    <h6 class="">Услуги</h6>
+
+                                <li>
+                                    <a href="?text=two" class="first_item">Проектирование</a>
+                                </li>
+                                <li>
+                                    <a href="?text=three" class="first_item">Монтаж</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="first_item">Изготовление и сборка</a>
+                                </li>
+                                </li>
+                                <li>
+                                    <h6>Продукция</h6>
+
+                                <li>
+                                    <a href="Accounting_sliding_panels.html" class="first_item acord">Электрощитовое
+                                        оборудование</a>
+                                    <ul>
+                                        <li>
+                                            <a href="?text=1-32" class="acord">Шкафы силовые</a>
+                                            <ul class="style_text_a">
+                                                <li><a href="?text=1">1</a></li>
+                                                <li><a href="?text=2">2</a></li>
+                                                <li><a href="?text=4">4</a></li>
+
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="?text=64-256" class="acord">Щиты промышленный
+                                                автоматики</a>
+                                            <ul class="style_text_a">
+                                                <li><a href="?text=64">64</a></li>
+                                                <li><a href="?text=128">128</a></li>
+                                                <li><a href="?text=256">256</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="?text=512-1024" class="acord">Главный распределительный
+                                                щит (ГРЩ)</a>
+                                            <ul class="style_text_a">
+                                                <li><a href="?text=512">512</a></li>
+                                                <li><a href="?text=1024">1024</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="?text=512-1024" class="acord">Шкафы автоматического ввода
+                                                резерва питани (АВР)</a>
+                                            <ul class="style_text_a">
+                                                <li><a href="?text=512">512</a></li>
+                                                <li><a href="?text=1024">1024</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="?text=512-1024" class="acord">Трансформаторные подстанции</a>
+                                            <ul class="style_text_a">
+                                                <li><a href="?text=512">512</a></li>
+                                                <li><a href="?text=1024">1024</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="?text=512-1024" class="acord">Панели распределительных
+                                                щитов (ЩО)</a>
+                                            <ul class="style_text_a">
+                                                <li><a href="?text=512">512</a></li>
+                                                <li><a href="?text=1024">1024</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="?text=512-1024" class="acord">Щиты распределительные.
+                                                Шкафы учета</a>
+                                            <ul class="style_text_a">
+                                                <li><a href="Distribution_cabinets_dwellings.html">Щиты распределительные
+                                                    для жилых зданий1</a></li>
+                                                <li><a href="Accounting_sliding_panels.html">Щиты распределительные
+                                                    для жилых зданий2</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="?text=512-1024" class="acord">Комплектные
+                                                распределительные устройства</a>
+                                            <ul class="style_text_a">
+                                                <li><a href="?text=512">512</a></li>
+                                                <li><a href="?text=1024">1024</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="?text=512-1024" class="acord">Главная заземляющая шина</a>
+                                            <ul class="style_text_a">
+                                                <li><a href="?text=512">512</a></li>
+                                                <li><a href="?text=1024">1024</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="?text=512-1024" class="acord">Пункты распределительные
+                                                серии ПР-11</a>
+                                            <ul class="style_text_a">
+                                                <li><a href="?text=512">512</a></li>
+                                                <li><a href="?text=1024">1024</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="?text=512-1024" class="acord">Ящики силовык вводные</a>
+                                            <ul class="style_text_a">
+                                                <li><a href="?text=512">512</a></li>
+                                                <li><a href="?text=1024">1024</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="?text=512-1024" class="acord">Кабельная воронка</a>
+                                            <ul class="style_text_a">
+                                                <li><a href="?text=512">512</a></li>
+                                                <li><a href="?text=1024">1024</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="?text=512-1024" class="acord">Устройство этажное
+                                                распределительное</a>
+                                            <ul class="style_text_a">
+                                                <li><a href="?text=512">512</a></li>
+                                                <li><a href="?text=1024">1024</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="?text=512-1024" class="acord">Производство
+                                                металлокорпусов</a>
+                                            <ul class="style_text_a">
+                                                <li><a href="?text=512">512</a></li>
+                                                <li><a href="?text=1024">1024</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="first_item acord">Модульное
+                                        оборудование</a>
+                                    <ul>
+                                        <li>
+                                            <a href="?text=other-1-32" class="acord">other-1 - 32</a>
+                                            <ul class="style_text_a">
+                                                <li><a href="?text=other-1">other-1</a></li>
+                                                <li><a href="?text=other-2">other-2</a></li>
+                                                <li><a href="?text=other-4">other-4</a></li>
+                                                <li><a href="?text=other-8">other-8</a></li>
+                                                <li><a href="?text=other-16">other-16</a></li>
+                                                <li><a href="?text=other-32">other-32</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="?text=other-64-256" class="acord">other-64 - 256</a>
+                                            <ul class="style_text_a">
+                                                <li><a href="?text=other-64">other-64</a></li>
+                                                <li><a href="?text=other-128">other-128</a></li>
+                                                <li><a href="?text=other-256">other-256</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="?text=other-512-1024" class="acord">other-512 - 1024</a>
+                                            <ul class="style_text_a">
+                                                <li><a href="?text=other-512">other-512</a></li>
+                                                <li><a href="?text=other-1024">other-1024</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="first_item acord">Кабель.
+                                        Провод</a>
+                                    <ul>
+                                        <li>
+                                            <a href="?text=other-1-32" class="acord">other-1 - 32</a>
+                                            <ul class="style_text_a">
+                                                <li><a href="?text=other-1">other-1</a></li>
+                                                <li><a href="?text=other-2">other-2</a></li>
+                                                <li><a href="?text=other-4">other-4</a></li>
+                                                <li><a href="?text=other-8">other-8</a></li>
+                                                <li><a href="?text=other-16">other-16</a></li>
+                                                <li><a href="?text=other-32">other-32</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="?text=other-64-256" class="acord">other-64 - 256</a>
+                                            <ul class="style_text_a">
+                                                <li><a href="?text=other-64">other-64</a></li>
+                                                <li><a href="?text=other-128">other-128</a></li>
+                                                <li><a href="?text=other-256">other-256</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="?text=other-512-1024" class="acord">other-512 - 1024</a>
+                                            <ul class="style_text_a">
+                                                <li><a href="?text=other-512">other-512</a></li>
+                                                <li><a href="?text=other-1024">other-1024</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        </li>
+                    </ul>
+
+
+                    <li>
+                        <a href="#">Доставка и оплата</a>
+                    </li>
+                    <li>
+                        <a href="#" class="active">Готовые обекты</a>
+                    </li>
+                    <li>
+                        <a href="#">Новости</a>
+                    </li>
+                    <li>
+                        <a href="#">Отзывы</a>
+                    </li>
+                    <li>
+                        <a href="#">Статьи</a>
+                    </li>
+                    <li>
+                        <a href="#">Оптовикам </a>
+                    </li>
+                    <li>
+                        <a href="#">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="clearfix">
+            <div class="baner_costumers">
+                <div class="wrapper">
+                    <div class="wrap_text_baner_costumers">
+                        <h3>Готовые<br>
+                            объекты</h3>
+                        <p>Lorem ipsum</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg_for_block">
+                <div class="wrap_way">
+                    <div class="wrapper">
+                        <div class="way">
+                            <a href="#">Главная</a>
+                            <span>/</span>
+                            <a href="#">Объекты</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="opus_data_for_users">
+                    <div class="wrapper">
+                        <div class="hiden">
+                        <div class="wrap_made_object clearfix">
+                            <a class="wrap_made_object_item" href="#">
+                                <img src="img/2_made_project.png">
+                                <p>Готовое решение </p>
+                            </a>
+
+                            <a class="wrap_made_object_item" href="#">
+                                <img src="img/one_made_object.jpg">
+                                <p>Готовое решение для
+                                    сельскохозяйственого
+                                    предприятия </p>
+                            </a>
+                            <a class="wrap_made_object_item" href="#">
+                                <img src="img/one_made_object.jpg">
+                                <p>Готовое решение </p>
+                            </a>
+                            <a class="wrap_made_object_item" href="#">
+                                <img src="img/one_made_object.jpg">
+                                <p>Готовое решение для
+                                    сельскохозяйственого
+                                    предприятия </p>
+                            </a>
+                            <a class="wrap_made_object_item" href="#">
+                                <img src="img/2_made_project.png">
+                                <p>Готовое решение </p>
+                            </a>
+
+                            <a class="wrap_made_object_item" href="#">
+                                <img src="img/one_made_object.jpg">
+                                <p>Готовое решение для
+                                    сельскохозяйственого
+                                    предприятия </p>
+                            </a>
+                            <a class="wrap_made_object_item" href="#">
+                                <img src="img/one_made_object.jpg">
+                                <p>Готовое решение для
+                                    сельскохозяйственого
+                                    предприятия </p>
+                            </a>
+                            <a class="wrap_made_object_item" href="#">
+                                <img src="img/one_made_object.jpg">
+                                <p>Готовое решение для
+                                    сельскохозяйственого
+                                    предприятия </p>
+                            </a>
+                            <a class="wrap_made_object_item" href="#">
+                                <img src="img/2_made_project.png">
+                                <p>Готовое решение для
+                                    сельскохозяйственого
+                                    предприятия </p>
+                            </a>
+
+                            <a class="wrap_made_object_item" href="#">
+                                <img src="img/one_made_object.jpg">
+                                <p>Готовое решение для
+                                    сельскохозяйственого
+                                    предприятия </p>
+                            </a>
+                            <a class="wrap_made_object_item" href="#">
+                                <img src="img/one_made_object.jpg">
+                                <p>Готовое решение для
+                                    сельскохозяйственого
+                                    предприятия </p>
+                            </a>
+                            <a class="wrap_made_object_item" href="#">
+                                <img src="img/one_made_object.jpg">
+                                <p>Готовое решение для
+                                    сельскохозяйственого
+                                    предприятия </p>
+                            </a>
+                        </div>
+                            <div class="pagination">
+                                <ul>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#" class="active">3</a></li>
+                                    <li><a href="#">...</a></li>
+                                    <li><a href="#">8</a></li>
+                                    <li><a href="#">9</a></li>
+                                    <li><a href="#">10</a></li>
+                                    <li><a href="#">...</a></li>
+                                    <li><a href="#">15</a></li>
+                                    <li><a href="#">16</a></li>
+                                    <li><a href="#">17</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="write_us2">
+                            <div class="wrapper">
+                                <div class="wrap_write_us2">
+                                    <h3>Необходимо разработать проект под ключ или проконсультироваться?</h3>
+                                    <h6>Напишите нам!</h6>
+                                    <div class="wrap_form_write2 clearfix ">
+                                        <form method="post">
+                                            <div class="wrap_input_data2 clearfix">
+                                                <input type="text" name="user_name" placeholder="Введите имя">
+                                                <input type="text" name="number_phon" placeholder="Введите номер телефона">
+                                                <input type="email" name="email" placeholder="Введите номер e-mail">
+                                            </div>
+                                            <div class="wrap_input_data3">
+                            <textarea>
+
+                            </textarea>
+
+                                            </div>
+                                            <input type="submit" class="btn_question2" value="Задать вопрос">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrap_ceo">
+                        <div class="wrapper">
+                            <div class="wrap">
+                                <div class="ceo">
+                                    <div class="wrap_ceo_text">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt ipsum ex, et rutrum nisl aliquet eget. Nulla sodales dolor eu purus tincidunt, finibus porttitor risus mollis. Fusce sagittis velit vel ante blandit, non tincidunt quam semper. Mauris bibendum ligula auctor mauris iaculis, egestas porta augue euismod. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec molestie hendrerit lacus, in vulputate tortor cursus tincidunt. Ut fringilla dignissim tincidunt. Nulla sollicitudin ullamcorper massa. Sed et urna sollicitudin, elementum nisl sit amet, euismod nibh. Phasellus nec finibus nisi.</p>
+                                        <p>
+                                            Fusce elementum ligula at ligula malesuada, accumsan tempor massa tempus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sit amet ex mi. Nullam viverra rutrum eros, at aliquam libero auctor vitae. Curabitur eros turpis, ultricies non venenatis a, dapibus vitae quam. Vestibulum eu consectetur mauris. In hac habitasse platea dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam lacus diam, imperdiet at porta non, tincidunt nec orci. Vivamus sit amet purus nec lacus ultrices tempor. Fusce nec nulla dolor.
+
+                                            Fusce tempor porta laoreet. Cras aliquet efficitur neque. Aenean ultrices, massa euismod ultrices luctus, magna velit feugiat neque, vitae imperdiet nulla quam in mauris. Nulla et risus nunc. Nulla gravida sapien id aliquet imperdiet. Vivamus sit amet magna enim. Ut ultrices id massa ac mattis. Vivamus interdum libero id rutrum euismod. Morbi pellentesque diam sit amet nisi maximus, ut ultrices turpis vehicula. Donec eget est quam. Nunc pulvinar porta ipsum a scelerisque.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="footer">
+            <div class="wrapper">
+                <div class="wrap_footer clearfix">
+                    <div class="wrap_footer_contacts">
+                        <h3>Контакты</h3>
+                        <div class="wrap_adress">
+                            <p>
+                                Адрес:<br>
+                                Москва, Севастопольский пр-т,
+                                д. 9, корп. 2, помещ. 2, офис 1
+                            </p>
+                        </div>
+                        <div class="wrap_email">
+                            <p>
+                                E-mail:<br>
+                                zakaz@mashelectro.ru
+                            </p>
+                        </div>
+                        <div class="wrap_number_phon">
+                            <p>Телефон<br>
+                                +7 (495) 771-07-82<br>
+                                +7 (926) 607-34-54<br>
+                                +7 (916) 778-92-80<br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="wrap_footer_about_the_company">
+                        <h3>О компании</h3>
+                        <div class="wrap_footer_nav1">
+                            <ul>
+                                <li>
+                                    <a href="#">Доставка и оплата</a>
+                                </li>
+                                <li>
+                                    <a href="#">Готовые обїекты</a>
+                                </li>
+                                <li>
+                                    <a href="#">Новости</a>
+                                </li>
+                                <li>
+                                    <a href="#">Отзывы</a>
+                                </li>
+                                <li>
+                                    <a href="#">Статьи</a>
+                                </li>
+                                <li>
+                                    <a href="#">Оптовикам</a>
+                                </li>
+                                <li>
+                                    <a href="#">Карта сайта</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="wrap_footer_services">
+                        <h3>Услуги и продукция</h3>
+                        <div class="wrap_footer_nav2">
+                            <ul>
+                                <li>
+                                    <a href="#">Проектирование</a>
+                                </li>
+                                <li>
+                                    <a href="#">Изготовление и сборка</a>
+                                </li>
+                                <li>
+                                    <a href="#">Монтаж</a>
+                                </li>
+                                <li>
+                                    <a href="#">Электрощитовое оборудование</a>
+                                </li>
+                                <li>
+                                    <a href="#">Модульное оборудование</a>
+                                </li>
+                                <li>
+                                    <a href="#">Кабель и провода</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="#">  <img src="img/footer_logo.png"></a>
+
+                </div>
+            </div>
+        </div>
+        <div class="wrap_copyright clearfix">
+            <div class="wrapper">
+
+                <div class="development">
+                    <p>Разработано в</p>
+                    <a href="#">  <img src="img/logo_development.png"></a>
+                </div>
+                <div class="copyright">
+                    <p><span>Copiright ©</span> ALL RIGHT RESERVD</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

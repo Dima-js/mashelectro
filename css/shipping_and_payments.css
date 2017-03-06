@@ -1,0 +1,54 @@
+.baner_costumers{
+    background: url("../img/bg_shipping_and_payments.png")!important;
+    background-size: cover;
+    background-position: center center;
+    height: 272px;
+    width: 100%;
+}
+.wrap_text_baner_costumers{
+    padding-top: 60px!important;
+}
+.wrap_text_baner_costumers h3{
+    color: #fcfcfc;
+    font-family: Rubik-Regular;
+    font-size: 55px;
+    font-weight: 400;
+    line-height: 50px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+@media (max-width: 400px) {
+    .wrap_text_baner_costumers h3 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .wrap_text_baner_costumers p {
+        font-size: 18px;
+    }
+
+    .row .cell:first-child {
+        padding: 10px 10px 10px 10px;
+    }
+    .row .cell {
+        padding: 10px 10px 10px 10px;
+    }
+}
+@media (max-width: 325px) {
+    .one_news p {
+        font-size: 13px;
+    }
+    .wrap_ceo_text p {
+        font-size: 13px;
+    }
+  
+
+}
+@media (max-width: 350px) {
+    .row .cell:first-child {
+        padding: 10px 5px 10px 5px;
+    }
+    .row .cell {
+        font-size: 12px;
+    }
+}
